@@ -1,12 +1,8 @@
-#include "video.h"
+#include "terminal.h"
 
 void main(void) {
-	init_video();
-	printc('c');
-	printc('c');
-	printc('c');
-	printc('c');
-	printc('c');
-	printc('c');
-	printc('c');
+	init_terminal();
+	putstr("Fuck yea.\nNew line");
+	putc(getc());
+	putstr("Another Fck yea!");
 }
