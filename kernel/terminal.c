@@ -3,12 +3,14 @@
 #include "keyboard.h"
 #include "terminal.h"
 
+#define MAX_COMMAND_LENGTH 128
+
 uint16_t cursor_x, cursor_y;
 
 void run_terminal() {
-    uint8_t cmd[128];
-    while() {
-
+    uint8_t cmd[MAX_COMMAND_LENGTH];
+    while(1) {
+        
     }
 }
 
