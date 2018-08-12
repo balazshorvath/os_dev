@@ -3,14 +3,17 @@
 #include "keyboard.h"
 #include "terminal.h"
 
-#define MAX_COMMAND_LENGTH 128
+#define MAX_COMMAND_LENGTH 512
 
 uint16_t cursor_x, cursor_y;
 
 void run_terminal() {
     uint8_t cmd[MAX_COMMAND_LENGTH];
     while(1) {
-        
+        getstr(cmd, MAX_COMMAND_LENGTH);
+        if (cmd[0] == 'q'){
+            return;
+        }
     }
 }
 
@@ -19,6 +22,7 @@ void init_terminal(){
     // kb_init();
     cursor_x = 0;
     cursor_y = 0;
+    clear_screen();
 }
 
 void set_terminal_color(uint16_t color){
@@ -76,12 +80,11 @@ int8_t convert_scancode(int8_t sc) {
 }
 
 int8_t getc(){
-    int8_t c;
+    int8_t* c;
     while(!kb_key_pressed());
-    c = kb_get_key();
-    c = convert_scancode(c);
-    putc(c);
-    return c;
+    c = kb_get_key_text();
+    putstr(c);
+    return c[0];
 }
 
 

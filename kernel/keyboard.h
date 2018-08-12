@@ -14,8 +14,14 @@ void kb_init();
  */
 int8_t kb_key_pressed();
 /*
+ * Returns the scancode for the key.
  * For scancodes: http://www.ee.bgu.ac.il/~microlab/MicroLab/Labs/ScanCodes.htm
  */
-int8_t kb_get_key();
+int8_t kb_get_key_code();
+
+/*
+ * Returns the text for the key.
+ */
+int8_t* kb_get_key_text();
 
 #endif /*KEYBOARD_H*/

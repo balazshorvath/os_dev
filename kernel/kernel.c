@@ -3,6 +3,6 @@
 void main(void) {
 	init_terminal();
 	putstr("Fuck yea.\nNew line");
-	putc(getc());
+	run_terminal();
 	putstr("Another Fck yea!");
 }
